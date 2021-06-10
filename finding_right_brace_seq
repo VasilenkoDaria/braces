@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+#include<string>
+
+int main(){
+        int braces = 0;
+        char str;
+        int len = 0;
+        string h;
+        while(cin >> str){
+            len += 1;
+            h.push_back(str);
+        }
+        for (int i = 0; i < len; ++i)
+        {
+            if (h[i] == '(')
+            {
+                if (++braces > 1)
+                    break;
+            }
+            else if (h[i] == ')')
+            {
+                if (--braces < 0)
+                    break;
+            }
+        }
+         if(braces){
+             cout << "Success" << endl;
+         }
+        else{
+            cout << len << endl;
+        }
+}
